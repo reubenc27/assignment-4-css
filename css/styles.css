@@ -1,0 +1,465 @@
+:root {
+    --blue: #072d67;
+    --purple: #5e35b1;
+    --white: #f4f4f4;
+    --black: #0e0e0e;
+}
+
+@font-face {
+    font-family: "Lato Bold";
+    src: url(../fonts/Lato-Bold.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Lato Reg";
+    src: url(../fonts/Lato-Regular.ttf);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ page header ~~~~~~~~~~~~~~~~~~~~ */
+header {
+    background-image: url("../img/4.jpg");
+    background-size: cover;  
+    background-position: center 45%; 
+    background-repeat: no-repeat; 
+    z-index: -999;
+    padding-right: 1vw;
+    height: 60vw;
+    position: relative;
+}
+header::before { /* shade over bg img */
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+header > * { /* keep rest of content unshaded */
+    position: relative;
+    z-index: 2; /* Keeps content above the overlay */
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ nav ~~~~~~~~~~~~~~~~~~~~ */  
+.nav {
+    padding-top: 0.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0.3vw;
+}
+.nav .logo {
+    height: 15vw;
+}
+.nav menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: var(--white);
+    font-family: "Lato Bold", sans-serif;
+    font-size: 3vw;
+    gap: 0.4vw;
+    letter-spacing: 0.05vw;
+}
+.nav .toggle {
+    display: none;
+}
+/* ~~~~~~~~~~~~~~~~~~~~ masthead ~~~~~~~~~~~~~~~~~~~~ */
+#masthead {
+    margin-top: 6.2vw;
+}
+#masthead h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-family: "Lato Bold", sans-serif;
+    font-size: 10vw;
+}
+#masthead .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12vw;
+}
+@keyframes bounce {
+    0%, 100% { 
+      transform: translateY(0); 
+    }
+    50% { 
+      transform: translateY(-1.25vw); 
+    }
+}
+#masthead img {
+    height: 4.06vw;
+    animation: bounce 1s ease-in-out infinite;
+}
+.triangle {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5vw;
+    background: var(--white);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ row one ~~~~~~~~~~~~~~~~~~~~ */
+#row-one {
+    z-index: 1;
+    height: 40vw;
+    background-color: var(--white);
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+#row-one h2 {
+    padding-top: 4.06vw;
+    padding-bottom: 4.375vw;
+    font-size: 7vw;
+    font-family: "Lato Bold", sans-serif;
+    color: var(--black)
+}
+#row-one p {
+    font-family: "Lato Regular", sans-serif;
+    color: var(--black); 
+    font-size: 2.5vw;
+    line-height: 3.12vw;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ cta ~~~~~~~~~~~~~~~~~~~~ */
+#cta {
+    display: flex;
+    position: relative;
+}
+.cta-1, .cta-2 {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 7vw;
+    font-family: "Lato Bold", sans-serif;
+    background-size: cover;
+}
+.cta-1::before, .cta-2::before { /* shade over bg img */
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Shading overlay */
+    z-index: 1;
+}
+.cta-1 > *, .cta-2 > * { /* keep rest of content unshaded */
+    position: relative;
+    z-index: 2; /* Keeps content above the overlay */
+}
+#cta h3 {
+    border: 0.3vw solid var(--white);
+    padding: 15.625vw 6.2vw;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ cta one ~~~~~~~~~~~~~~~~~~~~ */
+.cta-1 {
+    background-image: url(../img/10.jpg);
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ cta two ~~~~~~~~~~~~~~~~~~~~ */
+.cta-2 {
+    background-image: url(../img/7.jpg);
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ row two ~~~~~~~~~~~~~~~~~~~~ */
+#row-two {
+    z-index: 1;
+    height: 40vw;
+    background-color: var(--blue);
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+#row-two h2 {
+    padding-top: 4.375vw;
+    padding-bottom: 1.875vw;
+    font-size: 7vw;
+    font-family: "Lato Bold", sans-serif;
+    color: var(--white)
+}
+#row-two p {
+    font-family: "Lato Reg", sans-serif;
+    color: var(--white); 
+    font-size: 2.5vw;
+    line-height: 3.12vw;
+}
+
+#row-three .triangle-2 {
+    bottom: -0.125vw;
+    width: 100%;
+    height: 3.12vw;
+    background: var(--blue);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ row three ~~~~~~~~~~~~~~~~~~~~ */
+#row-three {
+    background-image: url(../img/5.jpg);
+    background-size: cover;  
+    background-position: center 55%; 
+    background-repeat: no-repeat; 
+    z-index: -999;
+    margin-top: -0.125vw;
+    position: relative;
+}
+#row-three::before{ /* shade over bg img */
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Shading overlay */
+    z-index: 1;
+}
+#row-three > * { /* keep rest of content unshaded */
+    position: relative;
+    z-index: 2; /* Keeps content above the overlay */
+}
+
+#row-three h2 {
+    padding-top: 12.5vw;
+    padding-bottom: 6.2vw;
+    font-size: 7vw;
+    font-family: "Lato Bold", sans-serif;
+    color: var(--white);
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vw;
+    padding-bottom: 20.625vw;
+}
+.b-one:hover, .b-two:hover {
+    box-shadow: 0 0.375vw 0.625vw rgba(0, 0, 0, 0.303);
+    transform: translateY(-0.125vw);
+    font-size: 3.12vw;
+    cursor: pointer;
+}
+.b-one, .b-two {
+    background: transparent;   
+    border: 0.3vw solid var(--white);  
+    color: var(--white);  
+    font-family: "Lato Bold", sans-serif;
+    padding: 2.5vw 9.375vw;   
+    font-size: 2.813vw;  
+}  
+
+/* ~~~~~~~~~~~~~~~~~~~~ form ~~~~~~~~~~~~~~~~~~~~ */
+form {
+    background-color: var(--purple);
+    padding: 2.5vw 0;
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+}
+label {
+    display: none;
+}
+input, textarea {
+    background-color: var(--white);
+    font-family: "Lato Bold", sans-serif;
+    font-size: 2.813vw;
+    border: none;
+    padding: 1.875vw 0;
+}
+input::placeholder, textarea::placeholder {
+    color: var(--black);
+    padding-left: 1.875vw;
+}
+input[type="email"], textarea {
+    width: 85.938vw;
+}
+.names {
+    display: flex;
+    justify-content: center;
+    gap: 2.188vw;
+    padding-bottom: 2.5vw;
+    padding-top: 6.2vw;
+}
+.names input {
+    width: 41.875vw; 
+}
+.email {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2.5vw;
+}
+.msg {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    display: flex;
+    justify-content: center;  
+    padding-top: 2.5vw;
+    padding-bottom: 3.75vw;
+}
+.submit {
+    background: transparent;   
+    border: 0.3vw solid var(--white);  
+    color: var(--white);  
+    font-family: "Lato Bold", sans-serif;
+    padding: 2.5vw 10.625vw;   
+    font-size: 2.813vw;
+}
+.submit:hover{
+    box-shadow: 0 0.375vw 0.625vw rgba(0, 0, 0, 0.303);
+    transform: translateY(-0.125vw);
+    font-size: 3.12vw;
+    cursor: pointer;
+}
+/* ~~~~~~~~~~~~~~~~~~~~ footer ~~~~~~~~~~~~~~~~~~~~ */
+footer{
+    background-color: var(--white);
+}
+.img {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2.5vw;
+    padding-top: -1.25vw;
+}
+footer img {
+    width: 56.25vw;
+    height: auto
+}
+.credit {
+    text-align: center;
+    font-size: 2.813vw;
+    font-family: "Lato Bold", sans-serif;
+    color: var(--black);
+    padding-bottom: 8.75vw;
+}
+
+@media screen  and (max-width: 768px) {
+    header {
+        height: 70vw;
+    }
+    .nav menu {
+        display: none;
+    }
+    .nav .toggle {
+        display: block;
+        height: 25px;
+        width: auto;
+    }
+    .nav .toggle:hover + menu {
+        display: block;
+    }
+
+    #masthead h1 {
+        padding-top: 5vw;
+        font-size: 8vw;
+    }
+    #masthead img {
+        padding-top: 7vw;
+    }
+    .triangle {
+        height: 5vw;
+        bottom: 0;
+    }
+    #row-one {
+        padding-bottom: 50px;
+    }
+    #row-one p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    #cta {
+        flex-direction: column;
+    }
+    #cta h3 {
+        border: 3px solid var(--white);
+        padding: 110px 140px;
+    }
+    .cta-1, .cta-2 {
+        height: 65vw;
+        flex: unset;
+        font-size: 40px;
+    }
+    #row-two {
+        padding-bottom: 50px;
+    }
+    #row-two p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    #row-three .triangle-2 {
+        height: 40px;
+    }
+    #row-three h2 {
+        font-size: 40px;
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        padding-bottom: 150px;
+    }
+    .b-one, .b-two {
+        padding: 10px 45px;
+        font-size: 17px;
+        margin-bottom: 25px;
+        border: 3.5px solid var(--white);
+        font-family: "Lato Reg", sans-serif;
+    }
+    .names {
+        flex-direction: column;
+        align-items: center;
+    }
+    .names input {
+        width: 400px;
+        padding: 15px 0;
+        margin-bottom: 5px;
+    }
+    input[type="email"], textarea {
+        width: 400px;
+        padding: 15px 0;
+        margin-bottom: 5px;
+
+    }
+    input::placeholder, textarea::placeholder {
+        color: var(--white)
+    }
+    .submit {
+        padding: 10px 60px;
+        font-size: 17px;
+        margin-bottom: 15px;
+        border: 3.5px solid var(--white);
+        font-family: "Lato Reg", sans-serif;
+    }
+    .img {
+        padding-bottom: 50px;
+        padding-top: 40px;
+    }
+    .credit {
+        text-align: center;
+        font-size: 16px;
+        font-family: "Lato Reg", sans-serif;
+        padding-bottom: 80px;
+    }
+}
+
+
+
